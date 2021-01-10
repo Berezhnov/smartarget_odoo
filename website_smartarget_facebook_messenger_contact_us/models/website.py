@@ -7,12 +7,12 @@ from odoo import fields, models
 class Website(models.Model):
     _inherit = "website"
 
-    has_smartarget_whatsapp_contact_us = fields.Boolean("Smartarget Whatsapp - Contact Us")
+    has_smartarget_facebook_messenger_contact_us = fields.Boolean("Smartarget Facebook Messenger - Contact Us")
 
     smartarget_user_id = fields.Char(
         "Smartarget User ID", help="Smartarget User ID (not the entire js code). You can get user ID on smartarget.online"
     )
 
-    phone_number = fields.Char(
-        "Whatsapp Phone Number",
+    facebook_messenger = fields.Char(
+        "Facebook Messenger",
     )

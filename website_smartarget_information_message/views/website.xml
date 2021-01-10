@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_website_form" model="ir.ui.view">
+        <field name="model">website</field>
+        <field name="inherit_id" ref="website.view_website_form" />
+        <field name="arch" type="xml">
+            <group name="other" position="inside">
+                <field name="has_smartarget_information_message" />
+                <field
+                    name="smartarget_user_id"
+                    attrs="{'invisible': [('has_smartarget_information_message', '=', False)]}"
+                />
+                <field
+                    name="information_message_title"
+                    placeholder="Information Message Title"
+                    attrs="{'invisible': [('has_smartarget_information_message', '=', False)]}"
+                />
+                <field
+                        name="information_message_text"
+                        placeholder="Information Message Text"
+                        attrs="{'invisible': [('has_smartarget_information_message', '=', False)]}"
+                />
+                <field
+                        name="information_message_button_text"
+                        placeholder="Information Message Button Text"
+                        attrs="{'invisible': [('has_smartarget_information_message', '=', False)]}"
+                />
+                <field
+                        name="information_message_button_link"
+                        placeholder="Information Message Button Link"
+                        attrs="{'invisible': [('has_smartarget_information_message', '=', False)]}"
+                />
+
+            </group>
+        </field>
+    </record>
+</odoo>

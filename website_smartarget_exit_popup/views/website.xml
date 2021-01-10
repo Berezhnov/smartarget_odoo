@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_website_form" model="ir.ui.view">
+        <field name="model">website</field>
+        <field name="inherit_id" ref="website.view_website_form" />
+        <field name="arch" type="xml">
+            <group name="other" position="inside">
+                <field name="has_smartarget_exit_popup" />
+                <field
+                    name="smartarget_user_id"
+                    attrs="{'invisible': [('has_smartarget_exit_popup', '=', False)]}"
+                />
+                <field
+                    name="exit_popup_header"
+                    placeholder="Exit Popup Header"
+                    attrs="{'invisible': [('has_smartarget_exit_popup', '=', False)]}"
+                />
+
+                <field
+                        name="exit_popup_text"
+                        placeholder="Exit Popup Text"
+                        attrs="{'invisible': [('has_smartarget_exit_popup', '=', False)]}"
+                />
+
+
+                <field
+                        name="exit_popup_button_text"
+                        placeholder="Exit Popup Button Text"
+                        attrs="{'invisible': [('has_smartarget_exit_popup', '=', False)]}"
+                />
+
+
+                <field
+                        name="exit_popup_button_link"
+                        placeholder="Exit Popup Button Link"
+                        attrs="{'invisible': [('has_smartarget_exit_popup', '=', False)]}"
+                />
+
+
+            </group>
+        </field>
+    </record>
+</odoo>

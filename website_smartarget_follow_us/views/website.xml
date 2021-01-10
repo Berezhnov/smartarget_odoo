@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_website_form" model="ir.ui.view">
+        <field name="model">website</field>
+        <field name="inherit_id" ref="website.view_website_form" />
+        <field name="arch" type="xml">
+            <group name="other" position="inside">
+                <field name="has_smartarget_follow_us" />
+                <field
+                    name="smartarget_user_id"
+                    attrs="{'invisible': [('has_smartarget_follow_us', '=', False)]}"
+                />
+                <field
+                    name="social_facebook"
+                    placeholder="Your Facebook"
+                    attrs="{'invisible': [('has_smartarget_follow_us', '=', False)]}"
+                />
+                <field
+                        name="social_instagram"
+                        placeholder="Your Instagram"
+                        attrs="{'invisible': [('has_smartarget_follow_us', '=', False)]}"
+                />
+                <field
+                        name="social_twitter"
+                        placeholder="Your Twitter"
+                        attrs="{'invisible': [('has_smartarget_follow_us', '=', False)]}"
+                />
+                <field
+                        name="social_linkedin"
+                        placeholder="Your LinkedIn"
+                        attrs="{'invisible': [('has_smartarget_follow_us', '=', False)]}"
+                />
+                <field
+                        name="social_pinterest"
+                        placeholder="Your Pinterest"
+                        attrs="{'invisible': [('has_smartarget_follow_us', '=', False)]}"
+                />
+                <field
+                        name="social_youtube"
+                        placeholder="Your Youtube"
+                        attrs="{'invisible': [('has_smartarget_follow_us', '=', False)]}"
+                />
+
+            </group>
+        </field>
+    </record>
+</odoo>

@@ -5,29 +5,29 @@
         <field name="inherit_id" ref="website.res_config_settings_view_form" />
         <field name="arch" type="xml">
             <div id="auth_signup_uninvited_setting" position="after">
-                <div class="col-12 col-md-12 o_setting_box" id="smartarget_whatsapp_contact_us_setting">
-                    <link rel="stylesheet" href="/website_smartarget_whatsapp_contact_us/static/styles.css"/>
+                <div class="col-12 col-md-12 o_setting_box" id="smartarget_information_message_setting">
+                    <link rel="stylesheet" href="/website_smartarget_information_message/static/styles.css"/>
                     <div class="o_setting_left_pane">
-                        <field name="has_smartarget_whatsapp_contact_us" />
+                        <field name="has_smartarget_information_message" />
                     </div>
                     <div class="o_setting_right_pane">
-                        <label for="has_smartarget_whatsapp_contact_us" />
+                        <label for="has_smartarget_information_message" />
                         <div class="text-muted">
-                            Allow customers to contact you via Whatsapp using button on each page.
+                            Show important updates and information on your site.
                         </div>
                         <div
                             class="content-group"
-                            attrs="{'invisible': [('has_smartarget_whatsapp_contact_us', '=', False)]}"
+                            attrs="{'invisible': [('has_smartarget_information_message', '=', False)]}"
                         >
                             <br/>
                             <br/>
                             <h5>Free Plus plan 🔥</h5>
 
-                            <p>Free Plus will show the Whatsapp icon on <span class="green">all pages</span> and will give you <span class="green">FREE</span> access to <span class="green">more apps</span>.</p>
+                            <p>Free Plus will show the Information Message on <span class="green">all pages</span> and will give you <span class="green">FREE</span> access to <span class="green">more apps</span>.</p>
 
                             <ol class="bullets">
                                 <li>Create a <a href="https://smartarget.online/page_signup.html?ref=odoo" target="_blank">Smartarget</a> account or log in to yours</li>
-                                <li><a href="https://app.smartarget.online/#/websites" target="_blank">Add your website</a> and configure Whatsapp - Contact Us app for your website</li>
+                                <li><a href="https://app.smartarget.online/#/websites" target="_blank">Add your website</a> and configure Information Message app for your website</li>
                                 <li>Go to <a href="https://app.smartarget.online/#/integration" target="_blank">Integration</a> and copy the User ID to the input text box to this page</li>
                             </ol>
 
@@ -37,7 +37,7 @@
                             </div>
                         </div>
                         <div
-                            attrs="{'invisible': [('has_smartarget_whatsapp_contact_us', '=', False)]}"
+                            attrs="{'invisible': [('has_smartarget_information_message', '=', False)]}"
                         >
 
                             <br/>
@@ -45,40 +45,30 @@
                             <br/>
                             <h5>Free Plan</h5>
 
-                            <p>Free will show the Whatsapp icon on <span class="red">homepage only</span>, with <span class="red">«powered by Smartarget»</span> label and <span class="red">default app options only</span>. It's also <span class="green">FREE</span>.</p>
+                            <p>Free will show the Information Message on <span class="red">homepage only</span>, with <span class="red">«powered by Smartarget»</span> label and <span class="red">default app options only</span>. It's also <span class="green">FREE</span>.</p>
 
                             <div class="row mt16">
-                                <label class="col-md-4 o_light_label" for="phone_number"/>
-                                <field name="phone_number" placeholder="Fill in this field to automatically enable FREE plan (limited)"/>
+                                <label class="col-md-4 o_light_label" for="information_message_title"/>
+                                <field name="information_message_title" placeholder="Great news!"/>
                             </div>
 
                             <div class="row mt16">
-                                <span class="col-md-4 o_light_label o_form_label">Call Message</span>
-                                <div class="o_field_widget">
-                                    <input class="to_field_char o_field_widget o_input" value="Contact us" disabled="disabled"/>
-                                    <br/>
-                                    <small>Use Free Plus Plan to change this param</small>
-                                </div>
+                                <label class="col-md-4 o_light_label" for="information_message_text"/>
+                                <field name="information_message_text" placeholder="Some text..."/>
                             </div>
 
                             <div class="row mt16">
-                                <span class="col-md-4 o_light_label o_form_label">Hide Message After Few Seconds</span>
-                                <span>
-                                    <span>
-                                        <input type="radio" disabled="disabled"/>
-                                        Yes
-                                    </span>
-                                    <br/>
-                                    <span>
-                                        <input type="radio" disabled="disabled" checked="checked"/>
-                                        No
-                                    </span>
-                                    <br/>
-                                    <small>Use Free Plus Plan to change this param</small>
-                                </span>
+                                <label class="col-md-4 o_light_label" for="information_message_button_text"/>
+                                <field name="information_message_button_text" placeholder="Button text"/>
                             </div>
+
                             <div class="row mt16">
-                                <span class="col-md-4 o_light_label o_form_label">App Position on Desktop</span>
+                                <label class="col-md-4 o_light_label" for="information_message_button_link"/>
+                                <field name="information_message_button_link" placeholder="http://example.com"/>
+                            </div>
+
+                            <div class="row mt16">
+                                <span class="col-md-4 o_light_label o_form_label">Message Position on Desktop</span>
                                 <span>
                                     <span>
                                         <input type="radio" disabled="disabled" checked="checked"/>
@@ -93,12 +83,13 @@
                                     <small>Use Free Plus Plan to change this param</small>
                                 </span>
                             </div>
+
                             <div class="row mt16">
-                                <span class="col-md-4 o_light_label o_form_label">App Position on Mobile</span>
+                                <span class="col-md-4 o_light_label o_form_label">Message Position on Mobile</span>
                                 <span>
                                     <span>
                                         <input type="radio" disabled="disabled" checked="checked"/>
-                                        Bottom right
+                                        Bottom
                                     </span>
                                     <br/>
                                     <span>
@@ -109,23 +100,50 @@
                                     <small>Use Free Plus Plan to change this param</small>
                                 </span>
                             </div>
+
                             <div class="row mt16">
-                                <span class="col-md-4 o_light_label o_form_label">Wave Animation</span>
+                                <span class="col-md-4 o_light_label o_form_label">Action Button Color</span>
+                                <span>
+                                    <div style="background: royalblue; width: 30px; height: 15px; border: 1px solid #f38020"></div>
+                                    <br/>
+                                    <small>Use Free Plus Plan to change this param</small>
+                                </span>
+                            </div>
+
+
+                            <div class="row mt16">
+                                <span class="col-md-4 o_light_label o_form_label">Delay Before Message Appears</span>
                                 <span>
                                     <span>
                                         <input type="radio" disabled="disabled" checked="checked"/>
-                                        Enabled
+                                        1 second
                                     </span>
                                     <br/>
                                     <span>
                                         <input type="radio" disabled="disabled"/>
-                                        Disabled
+                                        Another delay
                                     </span>
                                     <br/>
                                     <small>Use Free Plus Plan to change this param</small>
                                 </span>
                             </div>
 
+                            <div class="row mt16">
+                                <span class="col-md-4 o_light_label o_form_label">Dismiss Period</span>
+                                <span>
+                                    <span>
+                                        <input type="radio" disabled="disabled" checked="checked"/>
+                                        Show on every page refresh
+                                    </span>
+                                    <br/>
+                                    <span>
+                                        <input type="radio" disabled="disabled"/>
+                                        Another period
+                                    </span>
+                                    <br/>
+                                    <small>Use Free Plus Plan to change this param</small>
+                                </span>
+                            </div>
 
                         </div>
                     </div>
