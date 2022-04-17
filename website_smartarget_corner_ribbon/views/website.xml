@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_website_form" model="ir.ui.view">
+        <field name="model">website</field>
+        <field name="inherit_id" ref="website.view_website_form" />
+        <field name="arch" type="xml">
+            <group name="other" position="inside">
+                <field name="has_smartarget_corner_ribbon" />
+                <field
+                    name="smartarget_user_id"
+                    attrs="{'invisible': [('has_smartarget_corner_ribbon', '=', False)]}"
+                />
+                <field
+                    name="corner_ribbon_text"
+                    placeholder="Corner Ribbon Text"
+                    attrs="{'invisible': [('has_smartarget_corner_ribbon', '=', False)]}"
+                />
+                <field
+                        name="corner_ribbon_link"
+                        placeholder="Corner Ribbon Link"
+                        attrs="{'invisible': [('has_smartarget_corner_ribbon', '=', False)]}"
+                />
+
+            </group>
+        </field>
+    </record>
+</odoo>

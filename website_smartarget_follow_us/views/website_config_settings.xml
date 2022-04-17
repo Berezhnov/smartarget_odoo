@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_website_config_settings" model="ir.ui.view">
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="website.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <div id="auth_signup_uninvited_setting" position="after">
+                <div class="col-12 col-md-12 o_setting_box" id="smartarget_follow_us_setting">
+                    <link rel="stylesheet" href="/website_smartarget_follow_us/static/styles.css"/>
+                    <div class="o_setting_left_pane">
+                        <field name="has_smartarget_follow_us" />
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="has_smartarget_follow_us" />
+                        <div class="text-muted">
+                            Add social media follow us.
+                        </div>
+                        <div
+                            class="content-group"
+                            attrs="{'invisible': [('has_smartarget_follow_us', '=', False)]}"
+                        >
+                            <br/>
+                            <br/>
+                            <h5>Free Plus plan 🔥</h5>
+
+                            <p>Free Plus will show the Social Follow bar on <span class="green">all pages</span> and will give you <span class="green">FREE</span> access to <span class="green">more apps</span>.</p>
+
+                            <ol class="bullets">
+                                <li>Create a <a href="https://smartarget.online/page_signup.html?ref=odoo" target="_blank">Smartarget</a> account or log in to yours</li>
+                                <li><a href="https://app.smartarget.online/#/websites" target="_blank">Add your website</a> and configure Social Follow Us app for your website</li>
+                                <li>Go to <a href="https://app.smartarget.online/#/integration" target="_blank">Integration</a> and copy the User ID to the input text box to this page</li>
+                            </ol>
+
+                            <div class="row mt16">
+                                <label class="col-md-4 o_light_label" for="smartarget_user_id"/>
+                                <field name="smartarget_user_id" placeholder="Fill in this field to automatically enable FREE PLUS plan"/>
+                            </div>
+                        </div>
+                        <div
+                            attrs="{'invisible': [('has_smartarget_follow_us', '=', False)]}"
+                        >
+
+                            <br/>
+                            <hr/>
+                            <br/>
+                            <h5>Free Plan</h5>
+
+                            <p>Free will show the Social Follow bar on <span class="red">homepage only</span>, with <span class="red">«powered by Smartarget»</span> label and <span class="red">default app options only</span>. It's also <span class="green">FREE</span>.</p>
+
+                            <div class="row mt16">
+                                <label class="col-md-4 o_light_label" for="social_facebook"/>
+                                <field name="social_facebook" placeholder="https://facebook.com/..."/>
+                            </div>
+
+                            <div class="row mt16">
+                                <label class="col-md-4 o_light_label" for="social_instagram"/>
+                                <field name="social_instagram" placeholder="https://instagram.com/..."/>
+                            </div>
+
+                            <div class="row mt16">
+                                <label class="col-md-4 o_light_label" for="social_twitter"/>
+                                <field name="social_twitter" placeholder="https://twitter.com/..."/>
+                            </div>
+
+                            <div class="row mt16">
+                                <label class="col-md-4 o_light_label" for="social_linkedin"/>
+                                <field name="social_linkedin" placeholder="https://linkedin.com/..."/>
+                            </div>
+
+                            <div class="row mt16">
+                                <label class="col-md-4 o_light_label" for="social_pinterest"/>
+                                <field name="social_pinterest" placeholder="https://pinterest.com/..."/>
+                            </div>
+
+                            <div class="row mt16">
+                                <label class="col-md-4 o_light_label" for="social_youtube"/>
+                                <field name="social_youtube" placeholder="https://youtube.com/..."/>
+                            </div>
+
+                            <div class="row mt16">
+                                <span class="col-md-4 o_light_label o_form_label">Bar Position</span>
+                                <span>
+                                    <span>
+                                        <input type="radio" disabled="disabled" checked="checked"/>
+                                        Left
+                                    </span>
+                                    <br/>
+                                    <span>
+                                        <input type="radio" disabled="disabled"/>
+                                        Another position
+                                    </span>
+                                    <br/>
+                                    <small>Use Free Plus Plan to change this param</small>
+                                </span>
+                            </div>
+
+                            <div class="row mt16">
+                                <span class="col-md-4 o_light_label o_form_label">Style Theme</span>
+                                <span>
+                                    <span>
+                                        <input type="radio" disabled="disabled" checked="checked"/>
+                                        Colored
+                                    </span>
+                                    <br/>
+                                    <span>
+                                        <input type="radio" disabled="disabled"/>
+                                        Another theme
+                                    </span>
+                                    <br/>
+                                    <small>Use Free Plus Plan to change this param</small>
+                                </span>
+                            </div>
+
+                            <div class="row mt16">
+                                <span class="col-md-4 o_light_label o_form_label">Buttons Shape</span>
+                                <span>
+                                    <span>
+                                        <input type="radio" disabled="disabled" checked="checked"/>
+                                        Square
+                                    </span>
+                                    <br/>
+                                    <span>
+                                        <input type="radio" disabled="disabled"/>
+                                        Another shape
+                                    </span>
+                                    <br/>
+                                    <small>Use Free Plus Plan to change this param</small>
+                                </span>
+                            </div>
+
+                            <div class="row mt16">
+                                <span class="col-md-4 o_light_label o_form_label">Animation Type</span>
+                                <span>
+                                    <span>
+                                        <input type="radio" disabled="disabled" checked="checked"/>
+                                        Grow
+                                    </span>
+                                    <br/>
+                                    <span>
+                                        <input type="radio" disabled="disabled"/>
+                                        Another animation
+                                    </span>
+                                    <br/>
+                                    <small>Use Free Plus Plan to change this param</small>
+                                </span>
+                            </div>
+
+                            <div class="row mt16">
+                                <span class="col-md-4 o_light_label o_form_label">Buttons Space</span>
+                                <span>
+                                    <span>
+                                        <input type="radio" disabled="disabled" checked="checked"/>
+                                        No space
+                                    </span>
+                                    <br/>
+                                    <span>
+                                        <input type="radio" disabled="disabled"/>
+                                        Another variant
+                                    </span>
+                                    <br/>
+                                    <small>Use Free Plus Plan to change this param</small>
+                                </span>
+                            </div>
+
+                            <div class="row mt16">
+                                <span class="col-md-4 o_light_label o_form_label">Mobile Display</span>
+                                <span>
+                                    <span>
+                                        <input type="radio" disabled="disabled" checked="checked"/>
+                                        Show on mobile
+                                    </span>
+                                    <br/>
+                                    <span>
+                                        <input type="radio" disabled="disabled"/>
+                                        Hide
+                                    </span>
+                                    <br/>
+                                    <small>Use Free Plus Plan to change this param</small>
+                                </span>
+                            </div>
+
+                            <div class="row mt16">
+                                <span class="col-md-4 o_light_label o_form_label">Close Button Display</span>
+                                <span>
+                                    <span>
+                                        <input type="radio" disabled="disabled" checked="checked"/>
+                                        Show close button
+                                    </span>
+                                    <br/>
+                                    <span>
+                                        <input type="radio" disabled="disabled"/>
+                                        Hide
+                                    </span>
+                                    <br/>
+                                    <small>Use Free Plus Plan to change this param</small>
+                                </span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </field>
+    </record>
+</odoo>

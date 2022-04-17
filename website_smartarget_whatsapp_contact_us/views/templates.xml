@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="layout" inherit_id="website.layout">
+        <xpath expr="//script[@id='tracking_code']" position="after">
+            <t t-if="website and website.has_smartarget_whatsapp_contact_us">
+                <t t-if="website.smartarget_user_id">
+                    <script type="text/javascript">
+                        (function() {
+                        var u="<t t-raw="website.smartarget_user_id" />";
+                        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+                        g.type='text/javascript'; g.async=true; g.defer=true; g.src='https://smartarget.online/loader.js?ver=1&amp;u=' + u + '&amp;source=odoo_whatsapp_smartarget'; s.parentNode.insertBefore(g,s);
+                        })();
+                    </script>
+                </t>
+                <t t-else="">
+                    <script type="text/javascript">
+                        (function() {
+                        var u = 'odoo_whatsapp';
+                        var forceSettings='<t t-raw="json.dumps({'phoneNumber' : website.phone_number})" />';
+                        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+                        g.type='text/javascript'; g.async=true; g.defer=true; g.src='https://smartarget.online/loader.js?ver=1&amp;u=' + u + '&amp;forceSettings=' + forceSettings + '&amp;source=odoo_whatsapp'; s.parentNode.insertBefore(g,s);
+                        })();
+                    </script>
+                </t>
+            </t>
+        </xpath>
+    </template>
+</odoo>
+
