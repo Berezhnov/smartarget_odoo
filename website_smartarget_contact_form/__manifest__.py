@@ -10,7 +10,7 @@
 #################################################################################
 
 {
-    'name': 'APP_NAE',
+    'name': 'Smartarget Contact Form',
     'summary': 'Allow users to contact you by filling a form',
     'version': '1.0',
     "license": "AGPL-3",
